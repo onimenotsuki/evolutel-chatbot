@@ -8,13 +8,14 @@ const dotenv = require('dotenv');
 // Cargamos las variables de entorno
 dotenv.config();
 
+const hasApiKey = require('./polices/has-api-key');
+
 const witAIClient = new Wit({
   accessToken: process.env.WIT_AI_ACCESS_TOKEN,
   logger: new log.Logger(log.DEBUG),
 });
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -30,7 +31,6 @@ app.use((req, _res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', hasApiKey, indexRouter);
 
 module.exports = app;
