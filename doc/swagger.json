@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "Evolutel Chatbot",
+    "description": "Evolutel Chatbot API",
+    "contact": {
+      "name": "Edgar Talledos",
+      "email": "desarrollo5@evolutel.com.mx"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/",
+        "description": "Servidor local"
+      },
+      {
+        "url": "https://desolate-wildwood-53625.herokuapp.com/",
+        "description": "Servidor de prueba"
+      }
+    ],
+  }
+}
